@@ -19,7 +19,7 @@ export default function TheSeroSpillPage() {
 
   return (
     <main className="min-h-screen bg-background">
-      <section className="mx-auto max-w-7xl px-6 py-16">
+      <section className="mx-auto max-w- px-6 py-16">
         <h1 className="text-4xl font-extrabold text-center mb-12">
           The Sero Spill
         </h1>

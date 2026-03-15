@@ -9,13 +9,13 @@ interface BlogCardProps {
 export function BlogCard({ post }: BlogCardProps) {
   return (
     <Link href={`/pages/the-sero-spill/${post.slug}`}>
-      <article className="group rounded-xl border-[1.5px] border-foreground bg-card shadow-[4px_5px_0_0_rgba(59,130,246,0.3)] hover:shadow-[2px_3px_0_0_rgba(59,130,246,0.2)] transition-shadow duration-200 overflow-hidden h-full flex flex-col">
-        <div className="relative aspect-[4/3] w-full overflow-hidden">
+      <article className="group rounded-xl border-[1.5px] border-foreground p-4 bg-card shadow-[8px_8px_0_0_rgba(117,211,255,0.9)] overflow-hidden h-full flex flex-col">
+        <div className="relative aspect-4/3 w-full overflow-hidden rounded-2xl">
           <Image
             src={post.image}
             alt={post.title}
             fill
-            className="object-cover group-hover:scale-105 transition-transform duration-300"
+            className="object-cover rounded-2xl border-2 border-foreground "
           />
         </div>
         <div className="p-5 flex flex-col flex-1 text-center">

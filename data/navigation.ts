@@ -16,7 +16,7 @@ export const shopLinks: NavLink[] = [
 ];
 
 export const aboutLinks: NavLink[] = [
-  { label: "Why Sero?", href: "/pages/about-us" },
+  { label: "Why Sero?", href: "/pages/why-sero" },
   { label: "The Sero Story", href: "/pages/the-sero-story" },
   { label: "The Sero Spill", href: "/pages/the-sero-spill" },
   { label: "Find Your Flavor", href: "/pages/soda-quiz" },

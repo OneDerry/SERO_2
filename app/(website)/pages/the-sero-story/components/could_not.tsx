@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function CouldNot() {
   return (
-    <div className="flex items-center gap-8">
+    <div className="flex items-center gap-8 px-12 py-8 mt-10 mb-64">
       <div>
         <h1>We couldn’t find it, so we made it.</h1>
         <p>
@@ -19,9 +19,9 @@ export default function CouldNot() {
         <p>So yeah — we started Sero.</p>
       </div>
       <div>
-        <Card className="relative w-64 h-64">
+        <Card className="relative w-[800px] h-[700px] shadow-[9px_9px_0_0_rgba(117,211,255,0.9)]">
           <Image
-            src="/placeholder-image.jpg"
+            src="/could_not.webp"
             alt="Sero soda bottle"
             fill
             className="object-cover rounded-lg"

@@ -3,19 +3,19 @@ import Image from "next/image";
 
 export default function SeriousSero() {
   return (
-    <div className="flex items-center gap-8">
+    <div className="flex items-center gap-8 px-12 py-8 mt-10 mb-64">
       <div>
-        <Card className="relative w-64 h-64">
+        <Card className="relative w-[800px] h-[700px] shadow-[9px_9px_0_0_rgba(117,211,255,0.9)]">
           <Image
-            src="/placeholder-image.jpg"
+            src="/serious_sero.webp"
             alt="Sero soda bottle"
             fill
             className="object-cover rounded-lg"
           />
         </Card>
       </div>
-      <div>
-        <h1>
+      <div className="max-w-5xl space-y-8">
+        <h1 className="text-5xl max-w-6xl font-black">
           We don&apos;t take ourselves too seriously. But we take Sero very
           seriously.
         </h1>

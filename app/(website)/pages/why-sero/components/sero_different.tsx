@@ -9,22 +9,19 @@ const manifestoItems = [
   { emoji: "🧃", text: "We didn't tweak soda. We rebuilt it." },
   { emoji: "✅", text: "We fixed what big soda wouldn't." },
   { emoji: "📦", text: "Every order still feels personal." },
+  { emoji: "✅", text: "We fixed what big soda wouldn't." },
+  { emoji: "📦", text: "Every order still feels personal." },
 ];
 
-export default function Manifesto() {
+export default function SeroDifferent() {
   return (
     <section className="py-16 px-4">
-      <h2 className="text-3xl md:text-4xl font-extrabold text-center text-sero-dark mb-10">
-        The Anti-Soda Soda Manifesto
+      <h2 className="text-3xl md:text-5xl font-black text-center text-sero-dark mb-10">
+        What makes Sero different
       </h2>
       <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-12">
         {manifestoItems.map((item, i) => (
-          <div
-            key={i}
-            className={`flex items-center justify-between gap-3 py-2 border-b-2 border-foreground ${
-              i === 7 || i === 6 ? "border-b-0 border-none" : ""
-            }`}
-          >
+          <div key={i} className="flex items-center justify-between gap-3 py-1">
             <span className="flex items-center gap-2 text-sm md:text-base">
               <span>{item.emoji}</span>
               <span>{item.text}</span>

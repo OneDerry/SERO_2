@@ -10,7 +10,7 @@ import WayBigger from "./components/way_bigger";
 
 export default function TheSeroStoryPage() {
   return (
-    <main className="max-w-[90%] mx-auto">
+    <main>
       <Hero />
       <Manifesto />
       <CouldNot />

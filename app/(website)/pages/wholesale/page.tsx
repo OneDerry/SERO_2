@@ -1,7 +1,11 @@
+import TalkHero from "./components/talk_hero";
+import WhoWhatInterested from "./components/who_what_interested";
+
 export default function WholesalePage() {
   return (
     <main>
-      <h1>Wholesale</h1>
+      <TalkHero />
+      <WhoWhatInterested />
     </main>
   );
 }

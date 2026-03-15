@@ -21,7 +21,7 @@ export function Pagination({
         <button
           key={page}
           onClick={() => onPageChange(page)}
-          className={`text-lg font-semibold transition-colors ${
+          className={`text-lg font-semibold transition-colors cursor-pointer ${
             page === currentPage
               ? "text-foreground"
               : "text-muted-foreground hover:text-foreground"
@@ -33,7 +33,7 @@ export function Pagination({
       {currentPage < totalPages && (
         <button
           onClick={() => onPageChange(currentPage + 1)}
-          className="ml-2 rounded-full border-[1.5px] border-foreground p-2 hover:bg-accent transition-colors"
+          className="ml-2 rounded-full flex-end border-[1.5px] cursor-pointer border-foreground p-2 hover:bg-accent transition-colors"
         >
           <ChevronRight className="h-4 w-4" />
         </button>

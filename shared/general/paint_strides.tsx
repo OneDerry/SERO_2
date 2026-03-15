@@ -116,7 +116,12 @@ export function PaintStrides({
             </linearGradient>
           </defs>
         )}
-        <path d={stridesPath} fill={fill} fillRule="evenodd" />
+        <path
+          d={stridesPath}
+          fill={fill}
+          fillRule="evenodd"
+          shapeRendering="crispEdges"
+        />
       </svg>
     </div>
   );

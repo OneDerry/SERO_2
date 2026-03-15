@@ -3,7 +3,7 @@ import { PaintSplash } from "@/shared/general/paint_splash";
 import { PaintStrides } from "@/shared/general/paint_strides";
 import Image from "next/image";
 
-export default function Hero() {
+export default function StoreHero() {
   return (
     <div className="flex relative items-center gap-8 bg-primary-semilight px-12 py-8 mt-10 mb-64">
       <PaintSplash position="top" color="primary-semi-light" />
