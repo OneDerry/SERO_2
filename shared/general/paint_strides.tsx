@@ -3,6 +3,7 @@ interface PaintStridesProps {
   color?: "light" | "dark" | "primary" | "primary-semi-light" | "primary-light";
   mirrored?: boolean;
   gradient?: boolean;
+  reversed?: boolean;
 }
 
 // Pixel-traced from strides_black.png — main outline + evenodd gap cutouts
@@ -76,6 +77,7 @@ export function PaintStrides({
   color = "dark",
   mirrored = false,
   gradient = false,
+  reversed = false,
 }: PaintStridesProps) {
   const fills: Record<string, string> = {
     dark: "#000000",
@@ -100,7 +102,7 @@ export function PaintStrides({
         preserveAspectRatio="none"
         className={`block w-full h-[200px] md:h-[250px] ${
           position === "bottom" ? "rotate-180" : ""
-        } ${mirrored ? "-scale-x-100" : ""}`}
+        } ${mirrored ? "-scale-x-100" : ""} ${reversed ? "-scale-y-100" : ""}`}
       >
         {gradient && (
           <defs>

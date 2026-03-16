@@ -26,7 +26,7 @@ export function ContactCard() {
   });
 
   return (
-    <main className="max-w-xl mx-auto mb-72">
+    <main className="max-w-2xl mx-auto mb-72">
       <div>
         <Form {...form}>
           <form action="">
@@ -48,7 +48,7 @@ export function ContactCard() {
                         <FormLabel>Name</FormLabel>
                         <Input
                           {...field}
-                          className="border-1.5 rounded-2xl border border-foreground "
+                          className="border-1.5 h-12 rounded-3xl border border-foreground "
                         />
                       </FormItem>
                     )}
@@ -61,7 +61,7 @@ export function ContactCard() {
                         <FormLabel>Email</FormLabel>
                         <Input
                           {...field}
-                          className="border-1.5 border-foreground border rounded-2xl "
+                          className="border-1.5 h-12 border-foreground border rounded-3xl "
                         />
                       </FormItem>
                     )}
@@ -75,7 +75,7 @@ export function ContactCard() {
                       <FormLabel>Phone Number</FormLabel>
                       <Input
                         {...field}
-                        className="border-1.5 border-foreground border rounded-2xl "
+                        className="border-1.5  h-12 border-foreground border rounded-3xl "
                       />
                     </FormItem>
                   )}
@@ -88,7 +88,7 @@ export function ContactCard() {
                       <FormLabel>Message</FormLabel>
                       <Textarea
                         {...field}
-                        className="border-1.5 border-foreground border rounded-xl "
+                        className="border-1.5 border-foreground border rounded-2xl "
                       />
                     </FormItem>
                   )}
@@ -96,7 +96,7 @@ export function ContactCard() {
 
                 <Button
                   type="submit"
-                  className="w-full shadow-[4px_4px_0_0_rgba(117,211,255,0.3)]"
+                  className="w-full h-12 font-black text-base rounded-3xl shadow-[6px_6px_0_0_rgba(117,211,255,0.5)]"
                 >
                   Send
                 </Button>

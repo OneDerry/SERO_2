@@ -9,9 +9,11 @@ export default function WayBigger() {
 
       <div className="mx-auto max-w-7xl flex flex-col items-center text-center">
         {/* Rotating starburst with heart */}
-        <Starburst>
-          <p>❤️</p>
-        </Starburst>
+        <div className="absolute bottom-64 left-1/2 -translate-x-1/2 mb-10">
+          <Starburst>
+            <p>❤️</p>
+          </Starburst>
+        </div>
 
         {/* Quote */}
 
@@ -20,7 +22,7 @@ export default function WayBigger() {
         </h2>
 
         {/* Testimonial */}
-        <p className="mt-6 text-sm md:text-base leading-relaxed text-muted-foreground">
+        <p className="mt-6 text-sm md:text-base leading-relaxed">
           There&apos;s something kind of wild about how much better this is than
           the stuff from billion-dollar soda companies. And the best part? You
           get the sense it was built by a few good people trying to do something

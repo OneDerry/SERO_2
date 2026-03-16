@@ -8,9 +8,11 @@ export default function Average() {
       <PaintWave position="bottom" gradient mirrored />
       <div className="mx-auto max-w-3xl flex flex-col items-center text-center">
         {/* Rotating starburst with heart */}
-        <Starburst>
-          <p>🔥</p>
-        </Starburst>
+        <div className="absolute bottom-64 left-1/2 -translate-x-1/2 mb-10">
+          <Starburst>
+            <p>🔥</p>
+          </Starburst>
+        </div>
 
         {/* Quote */}
         <h2 className="text-3xl md:text-4xl font-extrabold text-foreground">
@@ -18,7 +20,7 @@ export default function Average() {
         </h2>
 
         {/* Testimonial */}
-        <p className="mt-6 text-sm md:text-base leading-relaxed max-w-2xl text-muted-foreground">
+        <p className="mt-6 text-sm md:text-base leading-relaxed max-w-2xl">
           I don&apos;t know who these guys are, but they seriously nailed it.
           The flavours are next level — and the brand just feels... different.
           Like, in a good way. You can tell it wasn&apos;t made in some

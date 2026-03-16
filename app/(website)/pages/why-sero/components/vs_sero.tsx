@@ -7,13 +7,12 @@ export function VsSero() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
           {/* Sero Product */}
           <div className="flex flex-col items-center gap-4">
-            <div className="relative  border border-foreground rotate-[-5deg] rounded-2xl shadow-[6px_6px_0_0_rgba(117,211,255,0.9)]">
+            <div className="relative h-[450px] w-full  border border-foreground rotate-[-5deg] rounded-2xl shadow-[6px_6px_0_0_rgba(117,211,255,0.9)]">
               <Image
-                src="/doctor_sero.webp"
+                src="/citrus_twist_pack.webp"
                 alt=""
-                width={400}
-                height={400}
-                className="object-cover h-[450px] w-full border border-foreground rounded-2xl"
+                fill
+                className="object-cover border border-foreground rounded-2xl"
               />
             </div>
           </div>
@@ -39,7 +38,7 @@ export function VsSero() {
           <div className="flex flex-col items-center gap-4">
             <div className="relative border border-foreground rotate-[5deg] rounded-2xl shadow-[6px_6px_0_0_rgba(117,211,255,0.9)]">
               <Image
-                src="/gutRot.webp"
+                src="/sugar_blast.webp"
                 alt=""
                 width={400}
                 height={400}

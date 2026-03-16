@@ -25,7 +25,15 @@ function BadgeIcon({ icon }: { icon: string }) {
   switch (icon) {
     case "sugar-free":
       return (
-        <svg viewBox="0 0 24 24" className="h-7 w-7 text-sero-dark" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <svg
+          viewBox="0 0 24 24"
+          className="h-7 w-7 text-sero-dark"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
           <path d="M6 8h4v8H6z" />
           <path d="M10 10h4v6h-4z" />
           <path d="M14 6h4v10h-4z" />
@@ -33,7 +41,15 @@ function BadgeIcon({ icon }: { icon: string }) {
       );
     case "no-colors":
       return (
-        <svg viewBox="0 0 24 24" className="h-7 w-7 text-sero-dark" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <svg
+          viewBox="0 0 24 24"
+          className="h-7 w-7 text-sero-dark"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
           <path d="M18 4l-4 4" />
           <path d="M14 8l-8 8a2 2 0 1 0 3 3l8-8" />
           <path d="M17 7l-1.5 1.5" />
@@ -41,14 +57,40 @@ function BadgeIcon({ icon }: { icon: string }) {
       );
     case "non-gmo":
       return (
-        <svg viewBox="0 0 24 24" className="h-7 w-7 text-sero-dark" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <svg
+          viewBox="0 0 24 24"
+          className="h-7 w-7 text-sero-dark"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
           <circle cx="12" cy="12" r="9" />
-          <text x="12" y="13.5" textAnchor="middle" fontSize="6" fontWeight="bold" fill="currentColor" stroke="none">GMO</text>
+          <text
+            x="12"
+            y="13.5"
+            textAnchor="middle"
+            fontSize="6"
+            fontWeight="bold"
+            fill="currentColor"
+            stroke="none"
+          >
+            GMO
+          </text>
         </svg>
       );
     case "gluten-free":
       return (
-        <svg viewBox="0 0 24 24" className="h-7 w-7 text-sero-dark" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <svg
+          viewBox="0 0 24 24"
+          className="h-7 w-7 text-sero-dark"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
           <path d="M12 21V10" />
           <path d="M9 7c0 2 3 3 3 3s3-1 3-3-3-3-3-3-3 1-3 3z" />
           <path d="M9 12c0 1.5 3 2.5 3 2.5s3-.5 3-2.5" />
@@ -57,7 +99,15 @@ function BadgeIcon({ icon }: { icon: string }) {
       );
     case "nut-free":
       return (
-        <svg viewBox="0 0 24 24" className="h-7 w-7 text-sero-dark" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <svg
+          viewBox="0 0 24 24"
+          className="h-7 w-7 text-sero-dark"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
           <path d="M12 4c-3.5 0-6 2.5-6 6 0 4.5 6 10 6 10s6-5.5 6-10c0-3.5-2.5-6-6-6z" />
           <path d="M12 4v6" />
           <path d="M9 7c2 1 4 1 6 0" />
@@ -95,7 +145,7 @@ export function ProductHero({ product, details }: ProductHeroProps) {
 
   return (
     <section className="px-4 md:px-8 py-8 md:py-16 mt-8">
-      <div className="mx-auto max-w-[86%] grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
+      <div className="mx-auto max-w-[96%] grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
         {/* Left: Image Gallery */}
         <div className="flex flex-col gap-4">
           <div className="relative h-[700px] w-full border border-foreground rounded-xl shadow-[6px_6px_0_0_rgba(117,211,255,0.9)]">
@@ -138,7 +188,7 @@ export function ProductHero({ product, details }: ProductHeroProps) {
             </span>
           </div>
 
-          <h1 className="text-3xl md:text-4xl font-extrabold text-sero-dark">
+          <h1 className="text-3xl md:text-7xl font-extrabold text-sero-dark">
             {product.name}
           </h1>
           <p className="text-xl font-bold text-sero-dark">
@@ -238,7 +288,7 @@ export function ProductHero({ product, details }: ProductHeroProps) {
           </Accordion>
 
           {/* OTP */}
-          <div className="py-2 overflow-hidden">
+          <div className="overflow-hidden">
             <label className="flex items-center justify-between px-4 py-3 cursor-pointer bg-primary-semilight/40">
               <div className="flex items-center gap-3">
                 <input
@@ -333,8 +383,20 @@ export function ProductHero({ product, details }: ProductHeroProps) {
               >
                 <div className="relative bg-primary-semilight rounded-full h-14 w-14 flex items-center justify-center">
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <svg viewBox="0 0 56 56" className="h-full w-full" fill="none">
-                      <line x1="8" y1="48" x2="48" y2="8" stroke="#121212" strokeWidth="2" strokeLinecap="round" />
+                    <svg
+                      viewBox="0 0 56 56"
+                      className="h-full w-full"
+                      fill="none"
+                    >
+                      <line
+                        x1="8"
+                        y1="48"
+                        x2="48"
+                        y2="8"
+                        stroke="#121212"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                      />
                     </svg>
                   </div>
                   <BadgeIcon icon={badge.icon} />

@@ -11,12 +11,12 @@ const whoItems = [
 ];
 
 const whatItems = [
-  { text: "We fixed what big soda wouldn't." },
-  { text: "Every order still feels personal." },
-  { text: "We fixed what big soda wouldn't." },
-  { text: "Every order still feels personal." },
-  { text: "We fixed what big soda wouldn't." },
-  { text: "Every order still feels personal." },
+  { text: "Competitive wholesale pricing" },
+  { text: "Fast, reliable fulfillment from our Canadian facility" },
+  { text: "Eye-catching packaging that sells itself" },
+  { text: "A growing line of zero sugar, zero artificial SKUs" },
+  { text: "Sales materials, samples, and support" },
+  { text: "A brand that gets people talking—and returning" },
 ];
 
 export default function WhoWhatInterested() {
@@ -24,13 +24,15 @@ export default function WhoWhatInterested() {
     <main>
       <section className="py-16 px-4">
         <h2 className="text-3xl md:text-5xl font-black text-center text-sero-dark mb-10">
-          Who we&apos;re looking for
+          Who We&apos;re Looking For
         </h2>
-        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-12">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-12">
           {whoItems.map((item, i) => (
             <div
               key={i}
-              className="flex items-center justify-between gap-3 py-1"
+              className={`flex items-center justify-between gap-3 py-1 border-b-2 border-foreground ${
+                i === 5 || i === 4 ? "border-b-0 border-none" : ""
+              }`}
             >
               <span className="flex items-center gap-2 text-sm md:text-base">
                 <span>{item.text}</span>
@@ -43,13 +45,15 @@ export default function WhoWhatInterested() {
 
       <section className="py-16 px-4">
         <h2 className="text-3xl md:text-5xl font-black text-center text-sero-dark mb-10">
-          What we&apos;re looking for
+          What We Offer
         </h2>
-        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-12">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-12">
           {whatItems.map((item, i) => (
             <div
               key={i}
-              className="flex items-center justify-between gap-3 py-1"
+              className={`flex items-center justify-between gap-3 py-1 border-b-2 border-foreground ${
+                i === 5 || i === 4 ? "border-b-0 border-none" : ""
+              }`}
             >
               <span className="flex items-center gap-2 text-sm md:text-base">
                 <span>{item.text}</span>
@@ -60,11 +64,11 @@ export default function WhoWhatInterested() {
         </div>
       </section>
 
-      <section className="py-16 px-4">
-        <h2 className="text-3xl md:text-5xl font-black text-center text-sero-dark mb-10">
+      <section className="py-16 px-4 text-center">
+        <h2 className="text-3xl md:text-5xl font-black text-center text-sero-dark mb-5">
           Interested?
         </h2>
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto space-y-4">
           <p>
             Tell us a bit about your business and we&apos;ll follow up fast.
             Let&apos;s make something great happen. Whether you run a single
@@ -74,7 +78,9 @@ export default function WhoWhatInterested() {
           </p>
           <p>We&apos;ll bring the flavor—you bring it to the people.</p>
 
-          <Button>Contact Us</Button>
+          <Button className="font-black shadow-[6px_6px_0_0_rgba(117,211,255,0.4)]">
+            Contact Us
+          </Button>
         </div>
       </section>
     </main>

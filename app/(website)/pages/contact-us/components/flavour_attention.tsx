@@ -21,9 +21,9 @@ const starburstPath = (() => {
 export default function FlavourAttention() {
   return (
     <section className="py-16">
-      <div className="mx-auto max-w-[90%] px-6 md:px-12 flex flex-col md:flex-row items-center gap-12 md:gap-18">
+      <div className="mx-auto max-w-[96%] px-6 flex flex-col md:flex-row items-center gap-12">
         {/* Left — copy */}
-        <div className="flex-1 space-y-5 text-center md:text-left">
+        <div className="flex-1 space-y-5">
           <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-tight text-sero-dark">
             Let the Flavor Answer Your Questions.
           </h2>
@@ -34,7 +34,7 @@ export default function FlavourAttention() {
           </p>
           <Button
             asChild
-            className="shadow-[4px_4px_0_0_rgba(117,211,255,0.3)]"
+            className="shadow-[4px_4px_0_0_rgba(117,211,255,0.3)] font-black text-base"
           >
             <Link href="/collections/sodas">Browse All Flavors</Link>
           </Button>
@@ -45,7 +45,7 @@ export default function FlavourAttention() {
           {/* Cyan shadow starburst (offset behind) */}
           <svg
             viewBox="0 0 400 400"
-            className="absolute w-[840px] h-[840px] md:w-[900px] md:h-[900px] translate-x-2 translate-y-2"
+            className="absolute w-[840px] h-[840px] md:w-[1100px] md:h-[1100px] translate-x-2 translate-y-2"
             aria-hidden="true"
           >
             <path d={starburstPath} fill="rgb(117, 211, 255)" />
@@ -54,7 +54,7 @@ export default function FlavourAttention() {
           {/* Yellow-green starburst with video clipped inside */}
           <svg
             viewBox="0 0 400 400"
-            className="relative z-10 w-[800px] h-[800px] md:w-[890px] md:h-[890px]"
+            className="relative z-10 w-[800px] h-[800px] md:w-[1090px] md:h-[1090px]"
           >
             <defs>
               <clipPath id="starburst-clip">

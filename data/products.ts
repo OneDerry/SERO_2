@@ -172,6 +172,49 @@ export const sharedFaqs: { question: string; answer: string }[] = [
   },
 ];
 
+export const sodaFaqs: { question: string; answer: string }[] = [
+  {
+    question: "Is Sero actually sugar-free?",
+    answer:
+      'Yep. As in 0 grams. Not "kinda sugar-free." Not "less sugar." Just... none.',
+  },
+  {
+    question: "What's it sweetened with?",
+    answer:
+      "We use stevia — a natural, plant-based sweetener that doesn't spike your blood sugar or leave a weird chemical aftertaste. No aspartame, no sucralose, no nonsense.",
+  },
+  {
+    question: "Does it really taste like soda?",
+    answer:
+      'That\'s the first thing most people say. The second is: "Wait... how is this zero sugar?"',
+  },
+  {
+    question: "Can I drink it every day?",
+    answer:
+      "Absolutely. Sero was made to be your new daily drink — no crash, no guilt, no compromise.",
+  },
+  {
+    question: "Is it keto / vegan / gluten-free?",
+    answer:
+      "Triple yes. Zero sugar, zero animal products, zero gluten. Just fizzy perfection in a can.",
+  },
+  {
+    question: "Where do you ship?",
+    answer:
+      "We ship across Canada and the U.S. Fast, fresh, and fridge-ready.",
+  },
+  {
+    question: "What if I don't like it?",
+    answer:
+      "Not likely — but if it happens, we'll make it right. No weird hoops, no hassle.",
+  },
+  {
+    question: "And what if I love it?",
+    answer:
+      "Then make sure you never run out! Save up to 15% with Subscribe & Save. You can skip, pause, or cancel anytime. Zero commitment. Just better bubbles.",
+  },
+];
+
 export const sharedReviews = [
   {
     rating: 5,

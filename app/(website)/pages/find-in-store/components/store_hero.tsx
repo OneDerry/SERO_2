@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function StoreHero() {
   return (
-    <div className="flex relative items-center gap-8 bg-primary-semilight px-12 py-8 mt-10 mb-64">
+    <div className="flex relative items-center gap-8 bg-primary-semilight px-16 py-8 mt-10 mb-72">
       <PaintSplash position="top" color="primary-semi-light" />
       <PaintStrides position="bottom" color="primary-semi-light" />
       <div className="flex-1">
