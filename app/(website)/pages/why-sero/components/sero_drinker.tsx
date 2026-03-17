@@ -3,10 +3,12 @@ import Image from "next/image";
 
 export default function SeroDrinker() {
   return (
-    <main className="grid grid-cols-3 gap-24 items-center px-16 py-4">
-      <section className="flex flex-col gap-12">
-        <Card className="shadow-[6px_6px_0_0_rgba(117,211,255,0.9)] text-center px-8">
-          <h1 className="font-black text-xl">🧠 The Health Hacker 💪</h1>
+    <main className="grid grid-cols-1 gap-8 px-4 py-4 sm:px-8 lg:grid-cols-3 lg:gap-24 lg:px-16">
+      <section className="flex flex-col gap-8 lg:gap-12">
+        <Card className="text-center px-6 shadow-[6px_6px_0_0_rgba(117,211,255,0.9)] sm:px-8">
+          <h1 className="text-lg font-black sm:text-xl">
+            🧠 The Health Hacker 💪
+          </h1>
           <p>
             You&apos;re counting macros, tracking steps, maybe even intermittent
             fasting — but you&apos;re not giving up flavour. Sero fits your
@@ -15,8 +17,10 @@ export default function SeroDrinker() {
             day — it&apos;s the soda that earned its spot.
           </p>
         </Card>
-        <Card className="shadow-[6px_6px_0_0_rgba(117,211,255,0.9)] text-center px-8">
-          <h1 className="font-black text-xl">🧊 The Everyday Sipper 📺</h1>
+        <Card className="text-center px-6 shadow-[6px_6px_0_0_rgba(117,211,255,0.9)] sm:px-8">
+          <h1 className="text-lg font-black sm:text-xl">
+            🧊 The Everyday Sipper 📺
+          </h1>
           <p>
             You don&apos;t need a reason to crack a can — it just tastes good.
             Whether it&apos;s mid-lecture, post-workout, or late-night TV,
@@ -26,19 +30,21 @@ export default function SeroDrinker() {
           </p>
         </Card>
       </section>
-      <section>
-        <Card className="relative w-full h-[900px] shadow-[9px_9px_0_0_rgba(117,211,255,0.9)]">
+      <section className="order-first lg:order-none">
+        <Card className="relative h-[350px] w-full shadow-[9px_9px_0_0_rgba(117,211,255,0.9)] sm:h-[500px] lg:h-[900px]">
           <Image
             src="/sero_golf_girls.webp"
             alt="Sero golf girls"
             fill
-            className="object-cover rounded-lg"
+            className="rounded-lg object-cover"
           />
         </Card>
       </section>
-      <section className="flex flex-col gap-12">
-        <Card className="shadow-[6px_6px_0_0_rgba(117,211,255,0.9)] text-center px-8">
-          <h1 className="font-black text-xl">🍬 The Craving Killer 🔪</h1>
+      <section className="flex flex-col gap-8 lg:gap-12">
+        <Card className="text-center px-6 shadow-[6px_6px_0_0_rgba(117,211,255,0.9)] sm:px-8">
+          <h1 className="text-lg font-black sm:text-xl">
+            🍬 The Craving Killer 🔪
+          </h1>
           <p>
             Sometimes you just want something cold, fizzy, and ridiculously
             good. But you don&apos;t want the sugar crash or guilt trip after.
@@ -47,8 +53,10 @@ export default function SeroDrinker() {
             in the best way.
           </p>
         </Card>
-        <Card className="shadow-[6px_6px_0_0_rgba(117,211,255,0.9)] text-center px-8">
-          <h1 className="font-black text-xl">🧐 The Label Reader 📦</h1>
+        <Card className="text-center px-6 shadow-[6px_6px_0_0_rgba(117,211,255,0.9)] sm:px-8">
+          <h1 className="text-lg font-black sm:text-xl">
+            🧐 The Label Reader 📦
+          </h1>
           <p>
             If you flip the can before you drink it, you&apos;re one of us. You
             want ingredients that make sense and a label you don&apos;t have to
