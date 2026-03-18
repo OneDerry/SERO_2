@@ -26,9 +26,9 @@ export function NextCard() {
     },
   ];
   return (
-    <div className="space-y-12 mb-40">
-      <div className="text-center max-w-3xl mx-auto">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-foreground">
+    <div className="mb-40 space-y-12">
+      <div className="mx-auto max-w-3xl text-center">
+        <h1 className="text-3xl font-extrabold text-foreground sm:text-4xl md:text-5xl">
           So What&apos;s Next?
         </h1>
         <p className="mt-4 text-base text-muted-foreground">
@@ -38,18 +38,18 @@ export function NextCard() {
           popping up where it matters most:
         </p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-16">
+      <div className="grid grid-cols-1 gap-8 px-4 sm:px-8 md:grid-cols-3 lg:px-16">
         {next.map((n) => (
           <article
             key={n.id}
-            className="relative rounded-xl border-[1.5px] border-foreground bg-card shadow-[8px_8px_0_0_rgba(117,211,255,0.9)] overflow-visible"
+            className="relative overflow-visible rounded-xl border-[1.5px] border-foreground bg-card shadow-[8px_8px_0_0_rgba(117,211,255,0.9)]"
           >
             {/* Starburst number badge */}
-            <div className="absolute -top-12 -left-16 z-10 text-background">
+            <div className="absolute -top-8 -left-6 z-10 text-background sm:-top-12 sm:-left-16">
               <Starburst>{n.id}</Starburst>
             </div>
 
-            <div className="p-4 space-y-4">
+            <div className="space-y-4 p-4">
               <div className="relative aspect-video w-full overflow-hidden rounded-lg">
                 <Image
                   src={n.image}
@@ -58,11 +58,11 @@ export function NextCard() {
                   className="object-cover"
                 />
               </div>
-              <div className="text-center px-2 pb-4">
+              <div className="px-2 pb-4 text-center">
                 <h2 className="text-xl font-extrabold text-foreground">
                   {n.title}
                 </h2>
-                <p className="text-sm text-muted-foreground mt-2">
+                <p className="mt-2 text-sm text-muted-foreground">
                   {n.paragraph}
                 </p>
               </div>

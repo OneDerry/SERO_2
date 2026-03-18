@@ -3,14 +3,14 @@ import { PaintStrides } from "@/shared/general/paint_strides";
 
 export default function TalkHero() {
   return (
-    <div className="flex relative items-center justify-center gap-8 bg-primary-semilight px-12 py-8 mt-10 mb-64">
+    <div className="relative flex items-center justify-center gap-8 bg-primary-semilight px-4 py-8 mt-10 mb-16 sm:px-8 lg:px-12 lg:mb-64">
       <PaintSplash position="top" color="primary-semi-light" />
       <PaintStrides position="bottom" color="primary-semi-light" />
-      <div className="text-center max-w-7xl space-y-8">
-        <h1 className="text-7xl font-black">
+      <div className="max-w-7xl space-y-4 text-center sm:space-y-8">
+        <h1 className="text-3xl font-black sm:text-5xl lg:text-7xl">
           Want to carry Sero? Let&apos;s talk.
         </h1>
-        <p className="">
+        <p>
           We&apos;re partnering with a select group of retailers, venues, and
           distributors to bring Sero&apos;s zero-sugar, full-flavor lineup to
           shelves across North America. If you believe in better beverages—and

@@ -5,26 +5,26 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <div className="flex relative items-center gap-8 bg-primary-semilight px-12 py-8 mt-10 mb-64">
+    <div className="relative flex flex-col items-center gap-8 bg-primary-semilight px-4 py-8 mt-10 mb-16 sm:px-8 lg:flex-row lg:px-12 lg:mb-64">
       <PaintSplash position="top" color="primary-semi-light" />
       <PaintStrides position="bottom" color="primary-semi-light" />
       <div className="flex-1">
-        <h1 className="text-7xl max-w-4xl font-black">
+        <h1 className="text-3xl font-black sm:text-5xl lg:max-w-4xl lg:text-7xl">
           Born in a Boardroom? Nah. Built in a Group Chat.
         </h1>
-        <p className="max-w-4xl">
+        <p className="mt-4 lg:max-w-4xl">
           All we wanted was a clean, crave-worthy soda. The rest kind of
           spiraled. We didn&apos;t plan to launch a brand. We just wanted a
           drink that didn&apos;t suck.
         </p>
       </div>
-      <div className="shrink-0">
-        <Card className="relative w-[1000px] h-[700px] shadow-[9px_9px_0_0_rgba(117,211,255,0.9)]">
+      <div className="w-full shrink-0 lg:w-auto">
+        <Card className="relative h-[300px] w-full shadow-[9px_9px_0_0_rgba(117,211,255,0.9)] sm:h-[400px] lg:h-[700px] lg:w-[1000px]">
           <Image
             src="/hero.webp"
             alt="Sero soda bottle"
             fill
-            className="object-cover rounded-lg"
+            className="rounded-lg object-cover"
           />
         </Card>
       </div>

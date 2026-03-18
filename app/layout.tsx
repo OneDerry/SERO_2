@@ -4,6 +4,7 @@ import "./globals.css";
 import { Footer } from "@/components/website/footer";
 import { Header } from "@/components/website/header";
 import { CartProvider } from "@/hooks/use-cart";
+import { SeroBot } from "@/shared/general/sero-bot/sero-bot";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -29,6 +30,7 @@ export default function RootLayout({
           <Header />
           {children}
           <Footer />
+          <SeroBot />
         </CartProvider>
       </body>
     </html>

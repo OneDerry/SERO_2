@@ -1,4 +1,4 @@
-import { HeroSection } from "@/app/(website)/components/hero";
+import { HeroCanSection } from "@/app/(website)/components/hero-can";
 import { FinallySection } from "@/app/(website)/components/finally";
 import { LineupSection } from "@/app/(website)/components/line_up";
 import { NewsletterSection } from "@/app/(website)/components/news_letter";
@@ -6,7 +6,7 @@ import { NewsletterSection } from "@/app/(website)/components/news_letter";
 export default function Home() {
   return (
     <main>
-      <HeroSection />
+      <HeroCanSection />
       <FinallySection />
       <LineupSection />
       <NewsletterSection />

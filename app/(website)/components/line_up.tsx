@@ -14,10 +14,10 @@ export function LineupSection() {
       </div>
       <div className="mb-56">
         <div className="text-center mb-8">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-sero-dark mb-2">
+          <h2 className="text-3xl md:text-6xl font-black mb-2">
             Meet the Lineup
           </h2>
-          <p className="text-sm text-gray-600">
+          <p className="text-base text-gray-600">
             4 bold flavours. Zero sugar. No compromise.
           </p>
         </div>
