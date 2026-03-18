@@ -1,11 +1,12 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useCallback, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/shared/common";
 import { useHeroAnimations } from "@/hooks/use-hero-animations";
 import { useCanPhysics } from "@/hooks/use-can-physics";
+import gsap from "gsap";
 
 // ── Pre-computed floating particle positions (reduced count) ─────
 const PARTICLES = Array.from({ length: 16 }, (_, i) => ({
@@ -17,6 +18,12 @@ const PARTICLES = Array.from({ length: 16 }, (_, i) => ({
   opacity: 0.15 + (i % 3) * 0.1,
 }));
 
+const POUR_PHRASES = [
+  "Better choices made easy",
+  "All the flavour, None of the compromise",
+  "Cheers",
+];
+
 export function HeroCanSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const canWrapRef = useRef<HTMLDivElement>(null);
@@ -26,6 +33,135 @@ export function HeroCanSection() {
   const glowARef = useRef<HTMLDivElement>(null);
   const glowBRef = useRef<HTMLDivElement>(null);
   const watermarkRef = useRef<HTMLDivElement>(null);
+  const phraseIndexRef = useRef(0);
+  const pourTlRef = useRef<gsap.core.Timeline | null>(null);
+  const pourElRef = useRef<HTMLDivElement | null>(null);
+
+  const handleCanLand = useCallback(() => {
+    const canEl = canWrapRef.current;
+    if (!canEl) return;
+
+    // Cleanup previous pour
+    pourTlRef.current?.kill();
+    pourElRef.current?.remove();
+
+    const canRect = canEl.getBoundingClientRect();
+    const pourX = canRect.left + canRect.width / 2;
+    const pourY = canRect.top;
+
+    // Pick next phrase
+    const phrase = POUR_PHRASES[phraseIndexRef.current % POUR_PHRASES.length];
+    phraseIndexRef.current++;
+
+    // Create wrapper for final text layout
+    const wrapper = document.createElement("div");
+    Object.assign(wrapper.style, {
+      position: "fixed",
+      left: "50%",
+      top: `${Math.max(40, Math.min(pourY - 100, window.innerHeight * 0.5))}px`,
+      zIndex: "10000",
+      pointerEvents: "none",
+      display: "flex",
+      whiteSpace: "nowrap",
+    });
+    gsap.set(wrapper, { xPercent: -50 });
+
+    // Create character spans
+    const chars: HTMLSpanElement[] = [];
+    for (const ch of phrase) {
+      const span = document.createElement("span");
+      span.textContent = ch === " " ? "\u00A0" : ch;
+      Object.assign(span.style, {
+        fontSize: "clamp(18px, 3vw, 32px)",
+        fontWeight: "800",
+        color: "white",
+        textShadow:
+          "0 0 20px rgba(117,211,255,0.6), 0 0 40px rgba(147,51,234,0.3)",
+        display: "inline-block",
+        willChange: "transform, opacity",
+      });
+      wrapper.appendChild(span);
+      chars.push(span);
+    }
+
+    document.body.appendChild(wrapper);
+    pourElRef.current = wrapper;
+
+    // Measure final (natural) positions
+    const finals = chars.map((s) => {
+      const r = s.getBoundingClientRect();
+      return { x: r.left + r.width / 2, y: r.top + r.height / 2 };
+    });
+
+    // Set initial: all chars at can mouth, invisible
+    chars.forEach((span, i) => {
+      gsap.set(span, {
+        x: pourX - finals[i].x,
+        y: pourY - finals[i].y,
+        scale: 0,
+        opacity: 0,
+      });
+    });
+
+    const tl = gsap.timeline();
+    pourTlRef.current = tl;
+
+    // Phase 1: Scatter from can mouth (pour effect)
+    chars.forEach((span, i) => {
+      const angle = -Math.PI * 0.5 + (Math.random() - 0.5) * Math.PI * 1.2;
+      const dist = 80 + Math.random() * 180;
+      const scatterX = pourX + Math.cos(angle) * dist - finals[i].x;
+      const scatterY = pourY + Math.sin(angle) * dist - finals[i].y;
+
+      tl.to(
+        span,
+        {
+          x: scatterX,
+          y: scatterY,
+          rotation: (Math.random() - 0.5) * 360,
+          scale: 0.5 + Math.random() * 1,
+          opacity: 1,
+          duration: 0.5,
+          ease: "power3.out",
+        },
+        i * 0.02,
+      );
+    });
+
+    // Phase 2: Rearrange into readable text at 2s
+    tl.to(
+      chars,
+      {
+        x: 0,
+        y: 0,
+        rotation: 0,
+        scale: 1,
+        duration: 0.8,
+        stagger: { each: 0.02, from: "center" },
+        ease: "back.out(1.4)",
+      },
+      2,
+    );
+
+    // Phase 3: Fade out after 3s display
+    tl.to(wrapper, {
+      opacity: 0,
+      y: -30,
+      duration: 0.6,
+      ease: "power2.in",
+      onComplete: () => {
+        wrapper.remove();
+        if (pourElRef.current === wrapper) pourElRef.current = null;
+      },
+    }, "+=3");
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      pourTlRef.current?.kill();
+      pourElRef.current?.remove();
+    };
+  }, []);
 
   useHeroAnimations({
     section: sectionRef,
@@ -42,6 +178,7 @@ export function HeroCanSection() {
     canWrap: canWrapRef,
     canFloat: canFloatRef,
     canImg: canImgRef,
+    onLand: handleCanLand,
   });
 
   return (
@@ -67,7 +204,7 @@ export function HeroCanSection() {
         className="pointer-events-none absolute inset-0 flex select-none items-center justify-center opacity-[0.04]"
       >
         <Image
-          src="/logo.avif"
+          src="/homePage.png"
           alt=""
           width={800}
           height={200}

@@ -7,6 +7,7 @@ interface CanPhysicsRefs {
   canWrap: RefObject<HTMLDivElement | null>;
   canFloat: RefObject<HTMLDivElement | null>;
   canImg: RefObject<HTMLDivElement | null>;
+  onLand?: () => void;
 }
 
 const DRAG_THRESHOLD = 5;
@@ -174,6 +175,9 @@ export function useCanPhysics(refs: CanPhysicsRefs) {
         duration,
         ease: "bounce.out",
         overwrite: "auto",
+        onComplete: () => {
+          refs.onLand?.();
+        },
       });
     }
 
@@ -231,5 +235,5 @@ export function useCanPhysics(refs: CanPhysicsRefs) {
       window.removeEventListener("pointermove", onPointerMove);
       window.removeEventListener("pointerup", onPointerUp);
     };
-  }, [refs.canWrap, refs.canFloat, refs.canImg]);
+  }, [refs.canWrap, refs.canFloat, refs.canImg, refs.onLand]);
 }

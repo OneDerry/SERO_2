@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function SeroDrinker() {
   return (
-    <main className="grid grid-cols-1 gap-8 px-4 py-4 sm:px-8 lg:grid-cols-3 lg:gap-24 lg:px-16">
+    <main className="grid grid-cols-1 gap-8 px-4 py-4 sm:px-8 items-center lg:grid-cols-3 lg:gap-24 lg:px-16">
       <section className="flex flex-col gap-8 lg:gap-12">
         <Card className="text-center px-6 shadow-[6px_6px_0_0_rgba(117,211,255,0.9)] sm:px-8">
           <h1 className="text-lg font-black sm:text-xl">
