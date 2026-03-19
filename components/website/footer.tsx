@@ -151,7 +151,7 @@ export function Footer() {
 
       <div className="pb-8 px-4 w-full">
         <Image
-          src="/Sero.webp"
+          src="/SERO.webp"
           alt="SERO"
           width={1200}
           height={350}
