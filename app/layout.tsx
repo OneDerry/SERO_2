@@ -5,6 +5,7 @@ import { Footer } from "@/components/website/footer";
 import { Header } from "@/components/website/header";
 import { CartProvider } from "@/hooks/use-cart";
 import { SeroBot } from "@/shared/general/sero-bot/sero-bot";
+import { SplashScreen } from "@/shared/general/splash-screen";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -27,10 +28,12 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${poppins.variable} font-sans antialiased`}>
         <CartProvider>
-          <Header />
-          {children}
-          <Footer />
-          <SeroBot />
+          <SplashScreen>
+            <Header />
+            {children}
+            <Footer />
+            <SeroBot />
+          </SplashScreen>
         </CartProvider>
       </body>
     </html>
