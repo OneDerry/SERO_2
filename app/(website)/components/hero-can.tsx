@@ -144,16 +144,20 @@ export function HeroCanSection() {
     );
 
     // Phase 3: Fade out after 3s display
-    tl.to(wrapper, {
-      opacity: 0,
-      y: -30,
-      duration: 0.6,
-      ease: "power2.in",
-      onComplete: () => {
-        wrapper.remove();
-        if (pourElRef.current === wrapper) pourElRef.current = null;
+    tl.to(
+      wrapper,
+      {
+        opacity: 0,
+        y: -30,
+        duration: 0.6,
+        ease: "power2.in",
+        onComplete: () => {
+          wrapper.remove();
+          if (pourElRef.current === wrapper) pourElRef.current = null;
+        },
       },
-    }, "+=3");
+      "+=3",
+    );
   }, []);
 
   useEffect(() => {
@@ -244,7 +248,7 @@ export function HeroCanSection() {
           </p>
           <div className="hero-cta mt-8 flex justify-center lg:justify-start">
             <Link href="/collections/sodas">
-              <Button className="rounded-full px-10 py-4 text-base font-bold shadow-[0_0_30px_rgba(117,211,255,0.2)] transition-shadow duration-300 hover:shadow-[0_0_50px_rgba(117,211,255,0.4)]">
+              <Button className="rounded-full px-10 py-4 text-base font-bold shadow-[6px_6px_0_0_rgba(117,211,255,0.4)] transition-shadow duration-300 hover:shadow-[0_0_50px_rgba(117,211,255,0.4)]">
                 Shop Now
               </Button>
             </Link>

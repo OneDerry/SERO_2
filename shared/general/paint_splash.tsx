@@ -59,7 +59,7 @@ export function PaintSplash({ position, color = "dark" }: PaintSplashProps) {
       <svg
         viewBox="0 0 1350 50"
         preserveAspectRatio="none"
-        className={`block w-full h-[30px] md:h-[20px] ${
+        className={`block w-full h-[10px] md:h-[20px] ${
           position === "bottom"
             ? "rotate-0"
             : position === "top"

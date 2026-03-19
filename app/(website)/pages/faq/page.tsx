@@ -25,7 +25,7 @@ export default function FaqPage() {
           waiting
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 max-w-4xl mx-auto ">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 px-4 sm:px-0 max-w-4xl mx-auto ">
           <Accordion type="single" collapsible className="w-full space-y-4">
             {leftColumn?.map((faq, i) => (
               <AccordionItem

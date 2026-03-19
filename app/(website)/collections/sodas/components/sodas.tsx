@@ -7,7 +7,7 @@ export default function Sodas() {
     <div className="relative bg-primary-semilight mt-96">
       <PaintStrides position="top" mirrored color="primary-semi-light" />
       <PaintStrides position="bottom" color="primary-semi-light" />
-      <section className="grid grid-cols-4 gap-4 p-6">
+      <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 p-6">
         {products.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}

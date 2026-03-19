@@ -100,7 +100,7 @@ export function PaintStrides({
       <svg
         viewBox="0 0 1440 200"
         preserveAspectRatio="none"
-        className={`block w-full h-[200px] md:h-[250px] ${
+        className={`block w-full h-[50px] md:h-[250px] ${
           position === "bottom" ? "rotate-180" : ""
         } ${mirrored ? "-scale-x-100" : ""} ${reversed ? "-scale-y-100" : ""}`}
       >
