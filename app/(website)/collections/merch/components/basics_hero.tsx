@@ -54,11 +54,11 @@ export function BasicsHero() {
 
   return (
     <div className="mt-96">
-      <section className=" relative bg-primary-semilight p-6">
+      <section className="relative overflow-hidden bg-primary-semilight p-4 md:p-6">
         <PaintStrides position="top" color="primary-semi-light" mirrored />
         <PaintStrides position="bottom" color="primary-semi-light" />
 
-        <div className="grid grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
           {merch.map((item) => (
             <Card key={item.id} className="p-4">
               <div className="relative aspect-square border border-foreground rounded-xl">

@@ -52,6 +52,7 @@ function SheetContent({
     <SheetPortal>
       <SheetOverlay />
       <SheetPrimitive.Content
+        aria-describedby={undefined}
         data-slot="sheet-content"
         className={cn(
           "fixed inset-y-0 right-0 z-50 flex h-full w-full max-w-md flex-col bg-background shadow-lg transition-transform duration-300 ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right",

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { useCart } from "@/hooks/use-cart";
 import Image from "next/image";
 import { Minus, Plus, Tag } from "lucide-react";
@@ -18,7 +18,11 @@ import {
   AccordionTrigger,
   AccordionContent,
   Card,
+  Carousel,
+  CarouselContent,
+  CarouselItem,
 } from "@/shared/common";
+import type { CarouselApi } from "@/shared/common/carousel";
 import { ProductDetailsTabs } from "./product_details";
 
 function BadgeIcon({ icon }: { icon: string }) {
@@ -118,6 +122,65 @@ function BadgeIcon({ icon }: { icon: string }) {
   }
 }
 
+function MobileImageCarousel({
+  images,
+  name,
+}: {
+  images: string[];
+  name: string;
+}) {
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    if (!api) return;
+    const onSelect = () => setCurrent(api.selectedScrollSnap());
+    api.on("reInit", onSelect);
+    api.on("select", onSelect);
+    return () => {
+      api.off("reInit", onSelect);
+      api.off("select", onSelect);
+    };
+  }, [api]);
+
+  return (
+    <div>
+      <Carousel opts={{ loop: true }} setApi={setApi}>
+        <CarouselContent>
+          {images.map((img, i) => (
+            <CarouselItem key={i}>
+              <div className="relative h-[450px] w-full border border-foreground rounded-xl shadow-[6px_6px_0_0_rgba(117,211,255,0.9)]">
+                <Image
+                  src={img}
+                  alt={`${name} view ${i + 1}`}
+                  fill
+                  className="object-cover border border-foreground rounded-xl"
+                />
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+      </Carousel>
+      {images.length > 1 && (
+        <div className="flex justify-center gap-2 mt-4">
+          {images.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => api?.scrollTo(i)}
+              className={`h-2.5 rounded-full transition-all ${
+                current === i
+                  ? "w-7 bg-foreground"
+                  : "w-2.5 bg-foreground/30"
+              }`}
+              aria-label={`Go to image ${i + 1}`}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
 interface ProductHeroProps {
   product: Product;
   details: ProductDetails;
@@ -148,36 +211,44 @@ export function ProductHero({ product, details }: ProductHeroProps) {
       <div className="mx-auto max-w-[96%] grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
         {/* Left: Image Gallery */}
         <div className="flex flex-col gap-4">
-          <div className="relative h-[700px] w-full border border-foreground rounded-xl shadow-[6px_6px_0_0_rgba(117,211,255,0.9)]">
-            <Image
-              src={product.images[selectedImage]}
-              alt={product.name}
-              fill
-              className="object-cover border border-foreground rounded-xl"
-            />
+          {/* Mobile: Carousel */}
+          <div className="md:hidden">
+            <MobileImageCarousel images={product.images} name={product.name} />
           </div>
-          {product.images.length > 1 && (
-            <div className="grid grid-cols-4 gap-3">
-              {product.images.map((img, i) => (
-                <button
-                  key={i}
-                  onClick={() => setSelectedImage(i)}
-                  className={`transition-colors relative h-[150px] cursor-pointer w-full border border-foreground rounded-2xl shadow-[6px_6px_0_0_rgba(117,211,255,0.9)] ${
-                    selectedImage === i
-                      ? "border-primary"
-                      : "border-gray-200 hover:border-gray-400"
-                  }`}
-                >
-                  <Image
-                    src={img}
-                    alt={`${product.name} view ${i + 1}`}
-                    fill
-                    className="object-cover border border-foreground rounded-2xl"
-                  />
-                </button>
-              ))}
+
+          {/* Desktop: Main image + thumbnails */}
+          <div className="hidden md:block">
+            <div className="relative h-[700px] w-full border border-foreground rounded-xl shadow-[6px_6px_0_0_rgba(117,211,255,0.9)]">
+              <Image
+                src={product.images[selectedImage]}
+                alt={product.name}
+                fill
+                className="object-cover border border-foreground rounded-xl"
+              />
             </div>
-          )}
+            {product.images.length > 1 && (
+              <div className="grid grid-cols-4 gap-3 mt-4">
+                {product.images.map((img, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setSelectedImage(i)}
+                    className={`transition-colors relative h-[150px] cursor-pointer w-full border border-foreground rounded-2xl shadow-[6px_6px_0_0_rgba(117,211,255,0.9)] ${
+                      selectedImage === i
+                        ? "border-primary"
+                        : "border-gray-200 hover:border-gray-400"
+                    }`}
+                  >
+                    <Image
+                      src={img}
+                      alt={`${product.name} view ${i + 1}`}
+                      fill
+                      className="object-cover border border-foreground rounded-2xl"
+                    />
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Right: Product Info */}
